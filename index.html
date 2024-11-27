@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="title"></title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="font-sans bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300">
+    <div id="toastContainer" class="fixed top-10 right-0 mt-8 mr-8 space-y-4 z-50">
+        <!-- Toast messages will be appended here dynamically -->
+    </div>
+    <header class="fixed top-0 left-0 w-full bg-gray-800 text-gray-300 z-50 shadow">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-white">TechConf</div>
+            <nav>
+                <ul class="flex space-x-4 lg:space-x-12">
+                    <li><a href="#home" class="nav-link hover:text-blue-400">Home</a></li>
+                    <li><a href="#schedule" class="nav-link hover:text-blue-400">Schedule</a></li>
+                    <li><a href="#contact" class="nav-link hover:text-blue-400">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="home" class="hero relative flex items-center bg-blue-500 text-white text-center min-h-screen"
+        style="background-image: url('assets/hero-section-bg.webp'); background-size: cover; background-position: center;">
+        <!-- Blurred Overlay -->
+        <div class="absolute inset-0 bg-black/30 backdrop-blur-sm"></div>
+        <!-- Unblurred Area -->
+        <div class="absolute bottom-1/2 left-0 w-full h-1/2 bg-transparent"></div>
+        <!-- Content -->
+        <div class="relative z-10 container mx-auto flex items-center justify-center h-full">
+            <div class="text-center space-y-4">
+                <h1 class="text-4xl font-bold">Join the Future of Technology</h1>
+                <button id="registerBtn"
+                    class="bg-white text-blue-500 font-semibold px-6 py-2 rounded hover:bg-gray-200">
+                    Register Now
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule" class="schedule py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Schedule</h2>
+            <div id="scheduleGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+        </div>
+    </section>
+
+    <section id="contact"
+        class="contact-form py-16 bg-gray-50 flex items-center justify-center lg:min-h-[100vh] min-h-[50vh]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Contact Us</h2>
+            <form id="contactForm" class="max-w-lg mx-auto bg-white p-8 shadow-md rounded">
+                <label for="name" class="block mb-2 font-semibold">Name:</label>
+                <input type="text" id="name" name="name" required
+                    class="w-full mb-4 px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+                <label for="email" class="block mb-2 font-semibold">Email:</label>
+                <input type="email" id="email" name="email" required
+                    class="w-full mb-4 px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+                <label for="message" class="block mb-2 font-semibold">Message:</label>
+                <textarea id="message" name="message" required
+                    class="w-full mb-4 px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+
+                <button type="submit"
+                    class="w-full bg-blue-500 text-white font-semibold py-2 rounded hover:bg-blue-600">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto text-center">
+            <div class="social-icons space-x-4">
+                <span class="hover:text-blue-400 cursor-pointer">FB</span>
+                <span class="hover:text-blue-400 cursor-pointer">Twitter</span>
+                <span class="hover:text-blue-400 cursor-pointer">LinkedIn</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
